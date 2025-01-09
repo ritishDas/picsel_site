@@ -11,11 +11,11 @@ export default TestCard;*/
 "use client";
 
 import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "./components/navbar-menu.jsx";
+import { HoveredLink, Menu, MenuItem, ProductItem } from "./components/ui/navbar-menu.jsx";
 import { cn } from "@/lib/utils";
 
-import { HeroParallax } from "./components/hero-parallax.jsx";
-import { CardBody, CardContainer, CardItem } from "./components/3dcard.jsx";
+import { HeroParallax } from "./components/ui/hero-parallax.jsx";
+import { CardBody, CardContainer, CardItem } from "./components/ui/3dcard.jsx";
 import { Timeline } from "@/components/timeline";
 import { Vortex } from "./components/ui/vortex";
 
