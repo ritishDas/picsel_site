@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom"
 import Floatnav from "../components/ui/floatnav.jsx";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 
@@ -26,16 +27,15 @@ export default function(){
 return(
 <>
 <Floatnav navItems={navItems}/>
+  <div className="home-navbar">
+  <h1>RD Events</h1>
   <div>
-Computer vision is a rapidly growing field, partly as a result of both cheaper and more 
-capable cameras, partly because of affordable processing power, and partly because vi-
-sion algorithms are starting to mature. OpenCV itself has played a role in the growth of 
-computer vision by enabling thousands of people to do more productive work in vision. 
-With its focus on real-time vision, OpenCV helps students and professionals efficiently 
-implement projects and jump-start research by providing them with a computer vision 
-and machine learning infrastructure that was previously available only in a few mature 
-research labs. The purpose of this text is to
+<Link to="">HOME</Link>
+<Link to="">EVENT</Link>
+<Link to="">ABOUT</Link>
   </div>
+  <button>Admin Login</button>
+ </div>
   </>
 );
 }

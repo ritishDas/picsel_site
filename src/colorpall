@@ -1,0 +1,36 @@
+1. Primary Color : #0078D4 
+For buttons, links, and key interactive elements.
+
+2. Secondary Color: #FFB74D 
+Use sparingly for highlights or secondary buttons.
+
+3. Background Color: #F9FAFB 
+For the main background of the website.
+
+4. Card/Container Background: #FFFFFF 
+For cards, modals, or sections.
+
+5. Text Color: #333333 
+For primary text.
+
+6. Secondary Text Color: #737373 
+For placeholder text or secondary information.
+
+
+Supporting Colors
+
+
+1. Success: #4CAF50 
+For success messages or confirmation states.
+
+2. Warning: #FFC107 
+For alerts or warnings.
+
+3. Error: #F44336 
+For errors or critical issues.
+
+4. Link Hover Color: #0056A3 
+To indicate interactive hover states.
+
+5. Divider Line Color: #E0E0E0 
+For subtle dividers between sections.
