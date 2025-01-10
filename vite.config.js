@@ -7,5 +7,6 @@ export default defineConfig({
       '@': '/src', // This sets the alias to point to the src directory
     },
   },
+base:'./',
   plugins: [react()],
 });
