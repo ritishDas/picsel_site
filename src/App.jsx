@@ -3,26 +3,44 @@ import {loadingContext} from './context/load.jsx';
 import {Routes,Route} from "react-router-dom";
 
 import Home from "./pages/home.jsx";
+import Nav from "./pages/navbar.jsx";
+import Event from "./pages/event.jsx";
+import About from "./pages/about.jsx";
 import './App.css'
 import './tw.css'
-function App() {
 
-  const {loading,setLoading} = useContext(loadingContext);
-  const loadingload = loading? "":"loading load-done";
-  const homeload = loading? "":"home-main load-home";
-setLoading(false);
-  return(<>
-    <div className={`loading ${loadingload}`}>
+function App() {
+  const { loading,setLoading } = useContext(loadingContext);
+
+  setTimeout(()=>setLoading(false),5000);
+
+  const getClassName = (base, conditionClass) => {
+    if(loading){
+      return base;
+    }
+    else{
+      return base+' '+conditionClass;
+    }
+  };
+
+
+  return (
+    <>
+    <div className={getClassName("loading", "load-done")}>
     <h1 className="shining-text">RD EVENTS</h1>
     </div>
-    <div className="main-frame"><div className={`home-main ${homeload}`}>
-<Routes>
-<Route path="/" element={<Home/>}/>
-
-</Routes>
-    </div></div>
+    <div className="main-frame">
+    <div className={getClassName("home-main", "load-home")}>
+    <Nav/>
+    <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/event" element={<Event/>}/>
+    <Route path="/about" element={<About/>}/>
+    </Routes>
+    </div>
+    </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

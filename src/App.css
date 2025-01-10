@@ -50,6 +50,7 @@ justify-content:center;
 .loading{
 position:absolute;
 top:0;
+background:white;
 overflow:hidden;
 transition:0.4s;
 }

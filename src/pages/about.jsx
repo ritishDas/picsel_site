@@ -1,7 +1,8 @@
+
 export default function(){
 return (
 <>
-This is the Home page
+This is the about page
   </>
 );
 }
