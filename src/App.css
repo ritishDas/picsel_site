@@ -49,6 +49,7 @@ justify-content:center;
 
 .loading{
 position:absolute;
+z-index:70 !important;
 top:0;
 background:white;
 overflow:hidden;

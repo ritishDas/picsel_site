@@ -1,9 +1,9 @@
+import {forwardRef} from "react";
 import {Link} from "react-router-dom"
 import Floatnav from "../components/ui/floatnav.jsx";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 
-export default function(){
-
+const nav = forwardRef((props,ref) => {
   const navItems = [
     {
       name: "Home",
@@ -26,7 +26,7 @@ export default function(){
  
 return(
 <>
-<Floatnav navItems={navItems}/>
+<Floatnav navItems={navItems} ref={ref}/>
   <div className="home-navbar">
   <h1>RD Events</h1>
   <div>
@@ -38,5 +38,6 @@ return(
  </div>
   </>
 );
-}
+})
 
+export default nav;
