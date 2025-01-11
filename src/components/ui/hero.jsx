@@ -1,15 +1,16 @@
-import React from "react";
+import React,{forwardRef} from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import {Link} from "react-router-dom";
 
-export const HeroParallax = ({
+export const HeroParallax = forwardRef(({
   products
-}) => {
+},r) => {
   const firstRow = products.slice(0, 5);
   const secondRow = products.slice(5, 10);
   const thirdRow = products.slice(10, 15);
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
+    container:r,
     target: ref,
     offset: ["start start", "end start"],
   });
@@ -53,7 +54,7 @@ export const HeroParallax = ({
       </motion.div>
     </div>)
   );
-};
+})
 
 export const Header = () => {
   return (
