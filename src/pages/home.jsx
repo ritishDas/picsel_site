@@ -5,8 +5,9 @@ import { Timeline } from "../components/ui/timeline";
 import React from "react";
 
 const Home = ()=>{
-  function HeroParallaxDemo() {
-    const   products = [
+
+function HeroParallaxDemo() {
+const products = [
   {
     title: "Moonbeam",
     link: "https://gomoonbeam.com",
@@ -25,7 +26,7 @@ const Home = ()=>{
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/rogue.png",
   },
- 
+
   {
     title: "Editorially",
     link: "https://editorially.org",
@@ -44,7 +45,7 @@ const Home = ()=>{
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
   },
- 
+
   {
     title: "Algochurn",
     link: "https://algochurn.com",
@@ -75,7 +76,7 @@ const Home = ()=>{
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
   },
- 
+
   {
     title: "Creme Digital",
     link: "https://cremedigital.com",
@@ -100,9 +101,10 @@ const Home = ()=>{
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
   },
-]; 
-    return <HeroParallax products={products} ref={ref} />;
-  }
+];
+
+  return <HeroParallax products={products} />;
+}
 
   function TimelineDemo() {
     const data = [
