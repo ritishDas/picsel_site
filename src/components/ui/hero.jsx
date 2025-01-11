@@ -1,16 +1,18 @@
-import React,{forwardRef} from "react";
+import React from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import {Link} from "react-router-dom";
 
-export const HeroParallax = forwardRef(({
+export const HeroParallax = ({
   products
-},ref) => {
+}) => {
   const firstRow = products.slice(0, 5);
   const secondRow = products.slice(5, 10);
   const thirdRow = products.slice(10, 15);
-  console.log(ref);
+ const ref = React.useRef(null); 
+  
   const { scrollYProgress } = useScroll({
     target: ref,
+    offset: ["start start", "end start"],
   });
 
   const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
@@ -22,7 +24,7 @@ export const HeroParallax = forwardRef(({
   const rotateZ = useSpring(useTransform(scrollYProgress, [0, 0.2], [20, 0]), springConfig);
   const translateY = useSpring(useTransform(scrollYProgress, [0, 0.2], [-700, 500]), springConfig);
   return (
-    (<div
+    (<div ref={ref}
       className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]">
       <Header />
       <motion.div
@@ -51,7 +53,7 @@ export const HeroParallax = forwardRef(({
       </motion.div>
     </div>)
   );
-})
+}
 
 export const Header = () => {
   return (

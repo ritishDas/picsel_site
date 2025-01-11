@@ -1,11 +1,10 @@
-import {forwardRef} from "react";
 import { HeroParallax } from "../components/ui/hero";
 
 import { Timeline } from "../components/ui/timeline";
 
 import React from "react";
 
-const Home = forwardRef((p,ref)=>{
+const Home = ()=>{
   function HeroParallaxDemo() {
     const   products = [
   {
@@ -180,6 +179,6 @@ const Home = forwardRef((p,ref)=>{
     <TimelineDemo/>  
     </>
   );
-})
+}
 
 export default Home;
