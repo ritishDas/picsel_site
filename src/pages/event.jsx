@@ -1,7 +1,7 @@
 import { PinContainer } from "../components/ui/3dpin";
 
 export default function(){
-  function AnimatedPinDemo() {
+/*  function AnimatedPinDemo() {
     return (
       (<div className="h-[40rem] w-full flex items-center justify-center ">
 	<PinContainer title="/ui.aceternity.com" href="https://twitter.com/mannupaaji">
@@ -22,11 +22,18 @@ export default function(){
 	</div>)
     );
   }
-
+*/
   return (
     <>
     This is the Event page
-    <AnimatedPinDemo/>
+    <div className = "event-card">
+<img src = "lap.jpg"/>
+    <div>
+    <span>Laptop wars</span>
+    <span><b>Venue:</b><span>Seminar Hall</span></span>
+    <p>5 days left</p>
+    </div>
+    </div>
     </>
   );
 }

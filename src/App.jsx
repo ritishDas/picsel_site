@@ -30,7 +30,7 @@ function App() {
         <div ref={ref} className={getClassName("home-main", "load-home")}>
           <Nav ref={ref} /> {/* Pass ref here */}
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home ref={ref} />} />
             <Route path="/event" element={<Event />} />
             <Route path="/about" element={<About />} />
           </Routes>
