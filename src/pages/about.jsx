@@ -45,9 +45,15 @@ const About = () => {
 
   return (
     <div>
+      <h1 class="text-3xl font-bold  text-center text-primary-500 py-8 font-mono">
+        About Us
+      </h1>
       <AboutHero />
       <InchargeInfo />
       <TeamSection title="Meet Our Team" members={team1} />
+      <TeamSection title="Team Members" members={team2} />
+      {/* Website Team */}
+      <TeamSection title="Website Team" members={team1} />
       <TeamSection title="Team Members" members={team2} />
     </div>
   );
