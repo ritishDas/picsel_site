@@ -1,6 +1,7 @@
 import { HeroParallax } from "../components/ui/hero";
 import { Timeline } from "../components/ui/timeline";
 import Member from "../components/memslider"
+import { PlaceholdersAndVanishInput } from "../components/ui/placeholders-and-vanish-input";
 
 import React,{useContext,useEffect,forwardRef} from "react";
 import url from "../../config";
@@ -10,15 +11,15 @@ const Home = forwardRef((p,r)=>{
 
 const {setLoading} = useContext(loadingContext);
 
-useEffect(()=>{
-let data;
-  (async()=>{
-    setLoading(true);
-data = await fetch(`${url}/api/event/allevent`).then(res=>res.json())
-setLoading(false);
-    console.log(data);
-})();
-},[]);
+// useEffect(()=>{
+// let data;
+//   (async()=>{
+//     setLoading(true);
+// data = await fetch(`${url}/api/event/allevent`).then(res=>res.json())
+// setLoading(false);
+//     console.log(data);
+// })();
+// },[]);
 
 function HeroParallaxDemo() {
 const products = [
@@ -188,12 +189,42 @@ const products = [
 	</div>)
     );
   }
+  function PlaceholdersAndVanishInputDemo() {
+    const placeholders = [
+      "What's the first rule of Fight Club?",
+      "Who is Tyler Durden?",
+      "Where is Andrew Laeddis Hiding?",
+      "Write a Javascript method to reverse a string",
+      "How to assemble your own PC?",
+    ];
+   
+    const handleChange = () => {
+      console.log(e.target.value);
+    };
+    const onSubmit = () => {
+      e.preventDefault();
+      console.log("submitted");
+    };
+    return (
+      <div className="h-[40rem] flex flex-col justify-center  items-center px-4">
+        <h2 className="mb-10 sm:mb-20 text-xl text-center sm:text-5xl dark:text-white text-black">
+          Ask Us Anything
+        </h2>
+        <PlaceholdersAndVanishInput
+          placeholders={placeholders}
+          onChange={handleChange}
+          onSubmit={onSubmit}
+        />
+      </div>
+    );
+  }
 
   return (
     <>
     <HeroParallaxDemo/>
     <TimelineDemo/>  
     <Member/>
+    <PlaceholdersAndVanishInputDemo/>
     </>
   );
 });
