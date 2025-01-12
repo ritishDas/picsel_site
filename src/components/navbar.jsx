@@ -1,9 +1,21 @@
-import {forwardRef} from "react";
+import {forwardRef,useEffect} from "react";
 import {Link,useNavigate} from "react-router-dom"
-import Floatnav from "../components/ui/floatnav.jsx";
+import Floatnav from "./ui/floatnav.jsx";
+import url from "../../config";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 
 const nav = forwardRef((props,ref) => {
+
+  useEffect(()=>{
+    (async()=>{
+      const login = await fetch(`${url}/api/admin/auth`,{
+	credentials:"include"
+      }).then(res=>res.json());
+      console.log("login is ",login);
+
+    })();
+  },[]);
+
   const navigate = useNavigate();
   const navItems = [
     {

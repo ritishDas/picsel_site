@@ -2,7 +2,7 @@ import { useContext,useEffect,useRef  } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/home.jsx";
-import Nav from "./pages/navbar.jsx";
+import Nav from "./components/navbar.jsx";
 import Event from "./pages/event.jsx";
 import Login from "./pages/login";
 import Footer from "./components/footer";
