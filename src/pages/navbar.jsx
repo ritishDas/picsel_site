@@ -1,9 +1,10 @@
 import {forwardRef} from "react";
-import {Link} from "react-router-dom"
+import {Link,useNavigate} from "react-router-dom"
 import Floatnav from "../components/ui/floatnav.jsx";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 
 const nav = forwardRef((props,ref) => {
+  const navigate = useNavigate();
   const navItems = [
     {
       name: "Home",
@@ -34,7 +35,9 @@ return(
 <Link to="/event">EVENT</Link>
 <Link to="/about">ABOUT</Link>
   </div>
-  <button>Admin Login</button>
+  <button onClick={
+()=>navigate("/login")
+  }>Admin Login</button>
  </div>
   </>
 );

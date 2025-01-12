@@ -53,7 +53,7 @@ z-index:70 !important;
 top:0;
 background:white;
 overflow:hidden;
-transition:0.4s;
+transition:0.1s;
 }
 
 .load-done{
@@ -65,7 +65,7 @@ width:70%;
 height:70%;
 position:relative;
 background:#F9FAFB; 
-transition:1s;
+transition:0.1s;
 overflow-y:scroll;
 box-shadow:0 0 2px 2px black;
 }

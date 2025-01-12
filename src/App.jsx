@@ -1,19 +1,20 @@
-import { useRef, useContext } from "react";
-import { loadingContext } from "./context/load.jsx";
+import { useContext,useEffect,useRef  } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/home.jsx";
 import Nav from "./pages/navbar.jsx";
 import Event from "./pages/event.jsx";
+import Login from "./pages/login";
+import Footer from "./components/footer";
+import {loadingContext} from "./context/load";
 import About from "./pages/about.jsx";
 
 import './App.css';
 import './tw.css';
 
 function App() {
-  const { loading, setLoading } = useContext(loadingContext);
 
-  setTimeout(() => setLoading(false), 5000);
+const {loading} = useContext(loadingContext);
 
   const getClassName = (base, conditionClass) => {
     return loading ? base : `${base} ${conditionClass}`;
@@ -33,7 +34,9 @@ function App() {
             <Route path="/" element={<Home ref={ref}/>} />
             <Route path="/event" element={<Event />} />
             <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
+    <Footer/>
         </div>
       </div>
     </>
