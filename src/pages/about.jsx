@@ -1,13 +1,3 @@
-/* 
-export default function(){
-return (
-<div>
-<h1>About US</h1>
-  </div>
-);
-}
- */
-
 import React from "react";
 import AboutHero from "../components/about/AboutHero";
 import TeamSection from "../components/about/TeamSection";

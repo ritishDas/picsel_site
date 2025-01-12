@@ -1,6 +1,8 @@
 import { PinContainer } from "../components/ui/3dpin";
+import {useNavigate} from "react-router-dom";
 
 export default function(){
+const navigate = useNavigate();
 /*  function AnimatedPinDemo() {
     return (
       (<div className="h-[40rem] w-full flex items-center justify-center ">
@@ -26,7 +28,7 @@ export default function(){
   return (
     <>
     This is the Event page
-    <div className = "event-card">
+    <div onClick={()=>navigate("/event/1")} className = "event-card">
 <img src = "lap.jpg"/>
     <div>
     <span>Laptop wars</span>
