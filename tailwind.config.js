@@ -10,6 +10,12 @@ module.exports = {
   darkMode: "class",
   theme: {
     // rest of the code
+    extend: {
+      colors: {
+        primary: "#6B46C1",
+        secondary: "#2D3748",
+      },
+    },
   },
   plugins: [
     // rest of the code
@@ -18,15 +24,13 @@ module.exports = {
 };
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
-function addVariablesForColors({
-  addBase,
-  theme
-}) {
+function addVariablesForColors({ addBase, theme }) {
   let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(Object.entries(allColors).map(([key, val]) => [`--${key}`, val]));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
 
   addBase({
     ":root": newVars,
   });
 }
-
