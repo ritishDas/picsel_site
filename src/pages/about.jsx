@@ -2,6 +2,14 @@ import React from "react";
 import AboutHero from "../components/about/AboutHero";
 import TeamSection from "../components/about/TeamSection";
 import InchargeInfo from "../components/about/InchargeInfo";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+// Initialize AOS
+AOS.init({
+  duration: 1000, // Animation duration (in milliseconds)
+  once: true, // Whether animation should happen only once while scrolling
+});
 
 const About = () => {
   const team1 = [
@@ -48,7 +56,7 @@ const About = () => {
 
   return (
     <div>
-      <h1 class="text-3xl font-bold  text-center text-primary-500 py-8 font-mono">
+      <h1 class="text-4xl font-bold  text-center text-primary-500 py-8 font-mono">
         About Us
       </h1>
       <AboutHero />

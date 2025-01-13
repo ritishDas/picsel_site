@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const Card = ({ name, photo }) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-4 flex flex-col items-center">
+    <div className="bg-white shadow-lg rounded-lg p-4 flex flex-col items-center flex-1 hover:scale-105 transition-transform duration-300">
       <img
         src={photo}
         alt={name}
