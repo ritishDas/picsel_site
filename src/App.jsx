@@ -2,12 +2,14 @@ import { useContext,useEffect,useRef  } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/home.jsx";
-import Nav from "./pages/navbar.jsx";
+import Nav from "./components/navbar.jsx";
 import Event from "./pages/event.jsx";
 import Login from "./pages/login";
 import Footer from "./components/footer";
 import {loadingContext} from "./context/load";
 import About from "./pages/about.jsx";
+import Eventpage from "./pages/eventpage";
+import AddEvent from "./pages/addevent";
 
 import './App.css';
 import './tw.css';
@@ -35,6 +37,10 @@ const {loading} = useContext(loadingContext);
             <Route path="/event" element={<Event />} />
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/addevent" element={<AddEvent />} />
+            <Route path="/event/:id" element={
+    <Eventpage/>
+} />
           </Routes>
     <Footer/>
         </div>

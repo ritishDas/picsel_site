@@ -1,7 +1,13 @@
+import {useEffect,useContext,useState} from "react";
 import { PinContainer } from "../components/ui/3dpin";
+import {loadingContext} from "../context/load";
+import url from "../../config";
+import Event from "../components/eventcard";
 
 export default function(){
-/*  function AnimatedPinDemo() {
+  const {setLoading} = useContext(loadingContext);
+  const [data,setData] = useState([]);
+  /*  function AnimatedPinDemo() {
     return (
       (<div className="h-[40rem] w-full flex items-center justify-center ">
 	<PinContainer title="/ui.aceternity.com" href="https://twitter.com/mannupaaji">
@@ -23,18 +29,29 @@ export default function(){
     );
   }
 */
+  useEffect(()=>{
+  (async()=>{
+    setLoading(true);
+const Data = await fetch(`${url}/api/event/allevent`).then(res=>res.json())
+setLoading(false);
+    setData(Data);
+})();
+},[]);
+
+
   return (
     <>
-    This is the Event page
-    <div className = "event-card">
-<img src = "lap.jpg"/>
-    <div>
-    <span>Laptop wars</span>
-    <span><b>Venue:</b><span>Seminar Hall</span></span>
-    <p>5 days left</p>
-    </div>
-    </div>
-    </>
+    {data.map((entry,i)=>
+<Event
+_id={entry._id}
+      name = {entry.name}
+      poster = {entry.poster}
+      venue = {entry.venue}
+      date = {entry.date}
+      key = {i}
+      />
+    )}
+   </>
   );
 }
 

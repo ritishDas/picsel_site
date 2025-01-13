@@ -2,23 +2,10 @@ import { HeroParallax } from "../components/ui/hero";
 import { Timeline } from "../components/ui/timeline";
 import Member from "../components/memslider"
 
-import React,{useContext,useEffect,forwardRef} from "react";
-import url from "../../config";
-import {loadingContext} from "../context/load"; 
+import React,{forwardRef} from "react";
 
 const Home = forwardRef((p,r)=>{
 
-const {setLoading} = useContext(loadingContext);
-
-useEffect(()=>{
-let data;
-  (async()=>{
-    setLoading(true);
-data = await fetch(`${url}/api/event/allevent`).then(res=>res.json())
-setLoading(false);
-    console.log(data);
-})();
-},[]);
 
 function HeroParallaxDemo() {
 const products = [
