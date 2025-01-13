@@ -31,6 +31,19 @@ const About = () => {
       name: "Hannah Gray",
       photo: "https://avatar.iran.liara.run/public/boy?username=Ash",
     },
+    {
+      name: "Ethan Brown",
+      photo: "https://avatar.iran.liara.run/public/boy?username=Ash",
+    },
+    { name: "Fiona Green", photo: "https://avatar.iran.liara.run/public/girl" },
+    {
+      name: "George Black",
+      photo: "https://avatar.iran.liara.run/public/girl",
+    },
+    {
+      name: "Hannah Gray",
+      photo: "https://avatar.iran.liara.run/public/boy?username=Ash",
+    },
   ];
 
   return (
