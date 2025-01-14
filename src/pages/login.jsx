@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState ,useContext} from "react";
 import {useNavigate} from "react-router-dom";
+import {loadingContext} from "../context/load";
 import url from "../../config";
 
 
@@ -7,6 +8,7 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const {setLoged} = useContext(loadingContext);
 
   const handleLogin = async(e) => {
     e.preventDefault();
@@ -20,6 +22,7 @@ credentials:"include"
 
 }).then(res=>res.json());
 alert(res.message);
+if(res.log)setLoged(true);
     navigate("/");
   };
 
@@ -70,17 +73,8 @@ alert(res.message);
           >
             Login
           </button>
-        </form>
-        <p className="text-[#737373] text-center mt-4">
-          Forgot your password?{" "}
-          <a
-            href="/"
-            className="text-[#0078D4] hover:text-[#0056A3] transition duration-200"
-          >
-            Reset it
-          </a>
-        </p>
-      </div>
+        </form>    
+    </div>
     </div>
   );
 };

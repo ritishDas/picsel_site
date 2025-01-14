@@ -4,7 +4,7 @@ const loadingContext = createContext();
 
 function Provider({ children }) {
   const [loading, setLoading] = useState(false);
-  const [loged, setLoged] = useState(true);
+  const [loged, setLoged] = useState(false);
 
   return (
     <loadingContext.Provider value={{ loading, setLoading,loged, setLoged }}>

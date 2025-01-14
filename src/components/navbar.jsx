@@ -5,8 +5,7 @@ import Floatnav from "./ui/floatnav.jsx";
 import url from "../../config";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 
-const nav = forwardRef((props,ref) => {
-
+const Nav = forwardRef((props,ref) => {
   const {loged,setLoged} = useContext(loadingContext);
 
   useEffect(()=>{
@@ -65,4 +64,4 @@ const nav = forwardRef((props,ref) => {
   );
 })
 
-export default nav;
+export default Nav;
