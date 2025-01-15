@@ -34,42 +34,14 @@ const About = () => {
       photo: "https://avatar.iran.liara.run/public/boy?username=Ash",
     },
   ];
- function PlaceholdersAndVanishInputDemo() {
-    const placeholders = [
-      "What's the first rule of Fight Club?",
-      "Who is Tyler Durden?",
-      "Where is Andrew Laeddis Hiding?",
-      "Write a Javascript method to reverse a string",
-      "How to assemble your own PC?",
-    ];
-   
-    const handleChange = () => {
-      console.log(e.target.value);
-    };
-    const onSubmit = () => {
-      e.preventDefault();
-      console.log("submitted");
-    };
-    return (
-      <div className="h-[40rem] flex flex-col justify-center  items-center px-4">
-        <h2 className="mb-10 sm:mb-20 text-xl text-center sm:text-5xl dark:text-white text-black">
-          Ask Us Anything
-        </h2>
-        <PlaceholdersAndVanishInput
-          placeholders={placeholders}
-          onChange={handleChange}
-          onSubmit={onSubmit}
-        />
-      </div>
-    );
-  }
+
   return (
     <div>
       <AboutHero />
       <InchargeInfo />
       <TeamSection title="Meet Our Team" members={team1} />
       <TeamSection title="Team Members" members={team2} />
-      <PlaceholdersAndVanishInputDemo/>
+     
     </div>
   );
 };
