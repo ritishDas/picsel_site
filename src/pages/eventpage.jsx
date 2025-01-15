@@ -40,7 +40,7 @@ const EventComponent = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen p-6">
-      <div className="max-w-5xl mx-auto bg-white shadow-md rounded-lg p-6">
+      <div className="max-w-5xl mx-auto shadow-md rounded-lg p-6">
         {/* Event Poster */}
         <div className="mb-6 text-center">
           <img
@@ -110,7 +110,7 @@ const EventComponent = () => {
           {Event.winners.length > 0 ? (
             <ul className="list-disc pl-5">
               {Event.winners.map((winner, i) => (
-                <li key={i}>{winner.name}</li>
+                <li style={{color:"black"}}  key={i}>{winner.name}</li>
               ))}
             </ul>
           ) : (
@@ -122,7 +122,7 @@ const EventComponent = () => {
         <div className="flex space-x-4 mb-6">
           <button
             onClick={handleAddParticipant}
-            className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-800 transition"
+            className="bg-blue-600 px-4 py-2 rounded-md hover:bg-blue-800 transition"
           >
             Add Participant
           </button>

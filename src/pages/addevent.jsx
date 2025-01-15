@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import url from "../../config";
 
 const UploadPicturesForm = () => {
   const [rules, setRules] = useState([""]);
@@ -19,7 +20,7 @@ const UploadPicturesForm = () => {
     const formData = new FormData(event.target);
 
     try {
-      const response = await fetch("http://localhost:8000/api/event/addevent", {
+      const response = await fetch(`${url}/api/event/addevent`, {
         method: "POST",
 	credentials:"include",
         body: formData,
