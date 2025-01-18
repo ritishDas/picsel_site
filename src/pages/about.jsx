@@ -2,6 +2,7 @@ import React from "react";
 import AboutHero from "../components/about/AboutHero";
 import TeamSection from "../components/about/TeamSection";
 import InchargeInfo from "../components/about/InchargeInfo";
+import { PlaceholdersAndVanishInput } from "../components/placeholders-and-vanish-input";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -54,6 +55,36 @@ const About = () => {
     },
   ];
 
+  function PlaceholdersAndVanishInputDemo() {
+    const placeholders = [
+      "What's the first rule of Fight Club?",
+      "Who is Tyler Durden?",
+      "Where is Andrew Laeddis Hiding?",
+      "Write a Javascript method to reverse a string",
+      "How to assemble your own PC?",
+    ];
+   
+    const handleChange = () => {
+      console.log(e.target.value);
+    };
+    const onSubmit = () => {
+      e.preventDefault();
+      console.log("submitted");
+    };
+    return (
+      <div className="h-[40rem] flex flex-col justify-center  items-center px-4">
+        <h2 className="mb-10 sm:mb-20 text-xl text-center sm:text-5xl dark:text-white text-black">
+          Ask Aceternity UI Anything
+        </h2>
+        <PlaceholdersAndVanishInput
+          placeholders={placeholders}
+          onChange={handleChange}
+          onSubmit={onSubmit}
+        />
+      </div>
+    );
+  }
+
   return (
     <div>
       <h1 class="text-4xl font-bold  text-center text-primary-500 py-8 font-mono">
@@ -66,7 +97,10 @@ const About = () => {
       {/* Website Team */}
       <TeamSection title="Website Team" members={team1} />
       <TeamSection title="Team Members" members={team2} />
+
+      <PlaceholdersAndVanishInputDemo/>
     </div>
+    
   );
 };
 
