@@ -51,6 +51,10 @@ _id={entry._id}
       key = {i}
       />
     )}
+    <div>
+      <h1>Events gallery</h1>
+      
+    </div>
    </>
   );
 }
